@@ -1,0 +1,128 @@
+CREATE TABLE Members				--회원DB
+(
+memberID varchar2(20) NOT NULL PRIMARY KEY,   	--아이디
+memberPW VARCHAR2(20),                          --비밀번호
+nickname VARCHAR2(20),                          --닉네임
+memberName VARCHAR2(20),                        --이름
+memberPhoneNumber VARCHAR2(13),			--전화번호
+memberAddress VARCHAR2(40),			--주소
+memberBirth DATE,                               --생년월일
+memberGrade VARCHAR2(10),                          --회원등급
+memberMileage NUMBER(8),                           --마일리지
+ebookMembership DATE                         	--ebook멤버쉽구독여부
+);
+
+create TABLE ServiceCenter						--고객센터DB
+(
+helpNum NUMBER(38) UNIQUE,
+helpID VARCHAR2(60) NOT NULL, 				--게시글 식별용 넘버링
+memberID varchar2(20) NOT NULL, 	--작성자 아이디
+helpTitle VARCHAR2(30) NOT NULL,                 			--게시글 제목
+helpWritedate DATE NOT NULL,        					--고객센터 질문 등록일
+helpContent VARCHAR2(1000) not null, 					--글 내용
+helpSortation NUMBER(1)                                 --본문인지댓글인지 구분 0or1
+);
+
+CREATE TABLE BOOKS				--책DB
+(
+bookID VARCHAR2(20) NOT NULL PRIMARY KEY, 	--책 식별번호 1
+bookName VARCHAR2(30) NOT NULL,                 --책 이름 2
+bookWriter VARCHAR2(30) NOT NULL,		--저자 3
+bookPublisher VARCHAR2(30) NOT NULL,		--출판사 4 
+bookStock NUMBER(20) NOT NULL,                  --책 현재 수량 5
+bookPrice NUMBER(20) NOT NULL,                  --책 금액 6
+bookRegion VARCHAR2(10) NOT NULL,               --국외 또는 국내인지 7
+bookCategory VARCHAR2(20) NOT NULL,             	--책 종류 8
+bookDate date NOT NULL                          --책 발간일 9
+);
+
+CREATE TABLE SalesPerformance                   --판매실적
+(
+bookID CONSTRAINT SalesPerformance_bookid REFERENCES BOOKs(bookID) NOT NULL UNIQUE,	--책이름
+sales1 number(8),
+sales2 number(8),
+sales3 number(8),
+sales4 number(8),
+sales5 number(8),
+sales6 number(8),
+sales7 number(8),
+sales8 number(8),
+sales9 number(8),
+sales10 number(8),
+sales11 number(8),
+sales12 number(8),
+totalSales number(20)
+);
+
+CREATE TABLE CART						--장바구니DB
+(   				
+memberID varchar2(20) NOT NULL,					--장바구니주인 아이디
+bookID CONSTRAINT cart_bookid REFERENCES BOOKs(bookID) NOT NULL, --책 식별번호  
+cartStock number(20) NOT NULL         				--카트에 담긴 책 수량
+);
+
+CREATE TABLE Ebooks							--EbookDB
+(
+bookID CONSTRAINT Ebooks_bookid REFERENCES BOOKs(bookID) NOT NULL,   	--책이름
+ebookPrice NUMBER(15),                                             	--ebook단권가격
+ebookContent VARCHAR2(4000)                                       	--ebook내용
+);
+
+CREATE TABLE reviews							--리뷰DB
+(
+memberID varchar2(20) NOT NULL,                                     	--리뷰작성자아이디
+bookID CONSTRAINT reviews_bookid REFERENCES BOOKs(bookID) NOT NULL,  	--책이름
+reviewDate Date,                                             		--작성일
+reviewContent VARCHAR2(1000),                                      	--내용
+reviewStarPoint number(1)                                           	--별점
+);
+--시퀸스(고객센터 번호증가를 위함 테이블모두 추가후 꼭 추가!!!)
+CREATE SEQUENCE AAA START WITH 1 INCREMENT BY 1 MAXVALUE 1000000000 CYCLE NOCACHE;
+
+drop TABLE SalesPerformance;
+drop TABLE Ebooks;
+drop TABLE reviews;
+drop TABLE cart;
+drop TABLE books;
+drop TABLE servicecenter;
+drop TABLE Members;
+drop SEQUENCE AAA;
+
+SELECT * FROM members;
+SELECT * FROM books;
+SELECT * FROM SalesPerformance;
+SELECT * FROM servicecenter;
+
+--북테스트용
+insert into books values('OV20200708ES20210107','고고고','글쓴이','글적는집',5,17000,'국내','소설','2020-10-10'); 
+insert into SalesPerformance values('aaa1111',1,2,3,4,5,6,7,8,9,10,11,12,100); 
+insert into books values('aaa2222','가가가','글쓴이','글적는집',5,17000,'국내','에세이','2020-10-10'); 
+insert into SalesPerformance values('aaa2222',2,2,3,4,5,6,7,8,9,10,11,10,100);
+insert into books values('aaa3333','구구구','글즉이','말적는집',5,17000,'국내','SF','2020-10-10'); 
+insert into SalesPerformance values('aaa3333',3,2,3,4,5,6,7,8,9,10,8,10,100);
+insert into books values('aaa4444','구가구','글국이','삼적는집',5,17000,'국내','자기계발','2020-10-10'); 
+insert into SalesPerformance values('aaa4444',4,2,3,4,5,6,7,8,9,10,6,10,100);
+insert into books values('aaa5555','나가나','글적이','가적는집',5,17000,'해외','소설','2020-10-10'); 
+insert into SalesPerformance values('aaa5555',5,2,3,4,5,6,7,8,9,10,3,10,100);
+insert into books values('aaa6666','오나나','글신이','국적는집',5,17000,'해외','소설','2020-10-10'); 
+insert into SalesPerformance values('aaa6666',6,2,3,4,5,6,7,8,9,10,3,12,100);
+insert into books values('aaa7777','구구단','글족이','쌀먹는집',5,17000,'해외','소설','2020-10-10'); 
+insert into SalesPerformance values('aaa7777',7,2,3,4,5,6,7,8,9,10,8,10,100);
+--회원테스트용
+insert into members values('aaa1111','1234','바바','바','010-0101-0101',17000,'경기도','1993-08-08','회원',0,'2000-01-01');
+commit;
+--고객센터테스트용
+insert into servicecenter values(AAA.NEXTVAL,'20210109214857aaa1111','aaa1111','제목','20210109','내용',0);
+insert into servicecenter values(AAA.NEXTVAL,'20210109214859aaa1111','aaa1111','제목','20210109','내용',0);
+insert into servicecenter values(AAA.NEXTVAL,'20210110214859ccc1111','aaa1111','제목','20210109','내용',0);
+insert into servicecenter values(AAA.NEXTVAL,'20210111214857aaa1111','aaa1111','제목','20210111','내용',0);
+insert into servicecenter values(null,'20210111214857aaa1111','운영자','RE : 제목','20210111','내용',1);
+insert into servicecenter values(null,'20210109214857aaa1111','운영자','RE : 제목','20210109','내용',1);
+insert into servicecenter values(null,'20210109214859aaa1111','운영자','RE : 제목','20210111','내용',1);
+insert into servicecenter values(null,'20210110214859ccc1111','운영자','RE : 제목','20210111','내용',1);
+
+--X
+SELECT * FROM servicecenter order by helpid DESC,helpsortation;
+SELECT * FROM servicecenter where helpID is not null order by helpid DESC,helpsortation;
+Select to_char(helpWritedate,'yyyy-mm-dd') from servicecenter;
+
