@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+@media ( min-width : 768px) {
+	#membermain {
+		width: auto;
+		margin: auto;
+	}
+	.member .card {
+		width: 35rem;
+		outline: 1px solid;
+	}
+	.member .card-title {
+		text-align: center;
+	}
+	.member #payment {
+		float: right;
+	}
+}
+
+@media ( max-width : 768px) {
+	#membermain {
+		width: auto;
+		margin: auto;
+	}
+	.member .card {
+		width: 25rem;
+		outline: 1px solid;
+	}
+	.member .card-title {
+		text-align: center;
+	}
+	.member #payment {
+		float: right;
+	}
+}

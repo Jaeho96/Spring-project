@@ -1,0 +1,40 @@
+body {
+  padding-bottom: 20px;
+}
+
+.navbar {
+  margin-bottom: 20px;
+}
+
+.searchform {
+  display: flex;
+  width: 400px;
+  background-color: white;
+  border: 2px solid white;
+  border-radius: 100px;
+  margin: auto;
+}
+
+select{
+  border: 0px;
+  border-radius: 100px;
+}
+
+#searchbox {
+  width: 200px;
+  border: 0px;
+  border-radius: 100px;
+}
+
+#searchbtn {
+  width: 60px;
+  height: 40px;
+  background-color: darkgray;
+  border: 0px;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}

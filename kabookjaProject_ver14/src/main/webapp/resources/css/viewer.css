@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+p {
+	white-space: pre-line;
+	overflow: auto;
+}
+
+.text-left {
+	margin: 0 5px;
+}
+
+#font-size {
+	margin: 0 5px;
+}
+
+#up {
+	width: 30px;
+	height: 30px;
+}
+
+#down {
+	width: 30px;
+	height: 30px;
+}
