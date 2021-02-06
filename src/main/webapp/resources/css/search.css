@@ -1,0 +1,15 @@
+.input-group-prepend{
+    margin-left: 30px;
+}
+
+.searchimg{
+    max-width: 200px;
+}
+
+#output{
+    border: 1px solid;
+}
+
+#hopeamount {
+    width: 90%;
+}

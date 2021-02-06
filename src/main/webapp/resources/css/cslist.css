@@ -1,0 +1,35 @@
+.container{
+    justify-items: flex-end;
+}
+
+
+.accordion-style .btn-link.collapsed:after {
+    background: none;
+    content: "+";
+    right: 17px;
+    left: inherit;
+    font-size: 20px;
+    height: auto;
+    transform: none;
+    width: auto;
+    top: 15px;
+    color: #333333;
+}
+.accordion-style .btn-link:after {
+    background: none;
+    content: "-";
+    right: 17px;
+    left: inherit;
+    font-size: 20px;
+    height: auto;
+    transform: none;
+    width: auto;
+    top: 15px;
+    position: absolute;
+    color: #333333;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+

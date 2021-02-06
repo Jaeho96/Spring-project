@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+#sidebarMenu {
+	min-width: 200px;
+	max-width: 200px;
+	position: sticky;
+}
+
+#collapseOne ul li {
+	/* sideMenu의 ID를 가진 태그 안에 <ul> 태그 안에 <li> 태그의 스타일을 지정*/
+	list-style: none; /* <li > 태그는 위의 이미지처럼 목록을 나타내는 점을 없앤다 */
+	line-height: 30px; /* 글씨가 가운데로 오도록 설정하기 위해 한줄의 높이를 30px로 설정*/
+	vertical-align: middle; /* 세로 정렬을 가운데로 설정(위의 line-height와 같이 설정 필요함)*/
+	text-align: left; /* 글씨 정렬을 가운데로 설정*/
+}
+
+#collapseTwo ul li {
+	/* sideMenu의 ID를 가진 태그 안에 <ul> 태그 안에 <li> 태그의 스타일을 지정*/
+	list-style: none; /* <li > 태그는 위의 이미지처럼 목록을 나타내는 점을 없앤다 */
+	line-height: 30px; /* 글씨가 가운데로 오도록 설정하기 위해 한줄의 높이를 30px로 설정*/
+	vertical-align: middle; /* 세로 정렬을 가운데로 설정(위의 line-height와 같이 설정 필요함)*/
+	text-align: left; /* 글씨 정렬을 가운데로 설정*/
+}
+
+#collapseThree ul li {
+	/* sideMenu의 ID를 가진 태그 안에 <ul> 태그 안에 <li> 태그의 스타일을 지정*/
+	list-style: none; /* <li > 태그는 위의 이미지처럼 목록을 나타내는 점을 없앤다 */
+	line-height: 30px; /* 글씨가 가운데로 오도록 설정하기 위해 한줄의 높이를 30px로 설정*/
+	vertical-align: middle; /* 세로 정렬을 가운데로 설정(위의 line-height와 같이 설정 필요함)*/
+	text-align: left; /* 글씨 정렬을 가운데로 설정*/
+}
+
+.accordion-menu {
+	/* sideMenu 아이디를 가진 태그 안에 있는 menuLink 클래스 태그들의 스타일 설정*/
+	text-decoration: none; /* 링크 (<a> 태그)가 가지는 기본 꾸밈 효과(밑줄 등)을 없앰 */
+	display: block; /* 링크를 글씨가 있는 부분 뿐만아니라 전체 영역을 클릭해도 링크가 걸리게 설정*/
+	font-size: 15px; /* 폰트 사이즈 12px로 설정*/
+	font-weight: bold; /* 폰트를 굵게 */
+
+}
+

@@ -1,0 +1,23 @@
+#slideshow {
+  width: 700px;
+}
+
+#bestseller-head {
+  background-color: rgb(201, 194, 194);
+}
+
+#bestseller {
+  width: 700px;
+}
+
+#bestseller-month {
+  width: 700px;
+}
+
+#cardbox {
+  width: 200px;
+}
+
+#navbar-form{
+  display: flex;
+}

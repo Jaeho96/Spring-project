@@ -1,0 +1,11 @@
+.container{
+    justify-items: flex-end;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+button{
+	margin-left : 5px; 
+}

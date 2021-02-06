@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+@media ( min-width : 768px) {
+	.searchimg {
+		max-width: 200px;
+	}
+	#output {
+		border: 1px solid;
+		width: 600px;
+	}
+	
+}
+
+@media ( max-width : 768px) {
+	.searchimg {
+		max-width: 100px;
+	}
+	#output {
+		border: 1px solid;
+		width: 400px;
+	}
+	
+}

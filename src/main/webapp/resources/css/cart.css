@@ -1,0 +1,55 @@
+
+.container {
+    justify-items: flex-end;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.table th {
+    padding: .35rem;
+    vertical-align: middle;
+    border-top: 1px solid #dee2e6;
+}
+
+.table td {
+    padding: .85rem;
+    vertical-align: middle;
+    border-top: 1px solid #dee2e6;
+}
+
+.shop-cart-table .shop-cart td {
+    line-height: 26px;
+    vertical-align: middle;
+    padding: 16px 8px;
+    min-width: 100px;
+}
+
+.cartimg{
+	height: 100px;
+}
+    
+#cnt {
+    width: 40px;
+}
+
+.input {
+    display: block;
+    width: 100%;
+    height: calc(1em + .4rem + 2px);
+    padding: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 0px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.input:focus {
+    outline: 0.3px solid black;
+}
